@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Kresno Farm Industri menyediakan produk herbal dan ekstrak gambir berkualitas tinggi.">
+  <title>Kresno Gambir</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 50px;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1030;
+    }
+
+    .navbar-nav .nav-link,
+    .navbar-brand {
+      font-size: 20px;
+    }
+
+    /* card */
+    .card {
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* small card */
+    .small-card .card-img-top {
+    height: 160px;
+    object-fit: cover;
+  }
+
+  .small-card .card-title {
+    font-size: 1rem;
+  }
+
+  .small-card .card-text {
+    font-size: 0.9rem;
+  }
+
+  .small-card .btn {
+    font-size: 0.85rem;
+    padding: 4px 8px;
+  }
+
+  .small-card .badge {
+    font-size: 0.7rem;
+    padding: 0.4em 0.5em;
+  }
+
+  .small-card .text-warning {
+    font-size: 0.8rem;
+  }
+
+  .small-card .card-body {
+    padding: 0.75rem;
+  }
+
+    /* card end */
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #000;
+      color: #fff;
+    }
+
+    .filter-btn.active {
+      background-color: #0d6efd;
+      color: white;
+    }
+
+    section .card.bg-light {
+      border-radius: 16px;
+      background: #f4f6f8;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="bg-black text-white py-3 position-relative">
+    <img src="images/a1522c601f6974c87c6d08492db8e15f.jpg" alt="Logo Kresno" width="80" height="80"
+      class="position-absolute top-0 start-0 m-3 rounded-circle" />
+    <h1 class="text-center">KRESNO FARM INDUSTRI</h1>
+    <div class="text-center mt-2">
+      <a href="#" class="text-white mx-2" data-bs-toggle="tooltip" title="Instagram"><i
+          class="fab fa-instagram fa-lg"></i></a>
+      <a href="#" class="text-white mx-2" data-bs-toggle="tooltip" title="TikTok"><i
+          class="fab fa-tiktok fa-lg"></i></a>
+      <a href="#" class="text-white mx-2" data-bs-toggle="tooltip" title="Facebook"><i
+          class="fab fa-facebook fa-lg"></i></a>
+    </div>
+  </header>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black shadow" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand" href="#">Kresno</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="#">Beranda</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Product</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Product 1</a></li>
+              <li><a class="dropdown-item" href="#">Product 2</a></li>
+              <li><a class="dropdown-item" href="#">Product 3</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main -->
+  <main class="container my-5">
+    <!-- About Section -->
+    <aside class="mb-5">
+      <h2>About Us</h2>
+      <p>Kresno Gambir is dedicated to providing high-quality products for our customers. Stay tuned for updates!</p>
+    </aside>
+
+    <!-- Filter + Search -->
+    <div class="mb-4">
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <div class="btn-group" role="group">
+          <button class="btn btn-outline-primary filter-btn active" data-category="all">Semua</button>
+          <button class="btn btn-outline-primary filter-btn" data-category="herbal">Herbal</button>
+          <button class="btn btn-outline-primary filter-btn" data-category="ekstrak">Ekstrak</button>
+        </div>
+        <input type="text" class="form-control w-50" id="searchInput" placeholder="Cari produk...">
+      </div>
+    </div>
+
+    <nav aria-label="breadcrumb" class="mb-4">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Beranda</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Produk</li>
+      </ol>
+    </nav>
+
+    <!-- Product Cards -->
+    <section>
+      <h2 class="mb-4">Our Products</h2>
+      <!-- Outer Card Container -->
+      <div class="card shadow-sm p-4 bg-dark border-0">
+        <div class="row" id="productList">
+
+          <!-- Card 1 -->
+          <div class="col-md-3 mb-4 product-card" data-category="herbal">
+            <div class="card h-100 position-relative small-card">
+              <span class="badge bg-danger position-absolute top-0 start-0 m-2">-10%</span>
+              <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98o-lzrne0arflzcda.webp" class="card-img-top" alt="Herbal A">
+              <div class="card-body">
+                <h5 class="card-title">Herbal A</h5>
+                <p class="card-text">Ramuan herbal alami untuk kesehatan tubuh.</p>
+                <div class="mb-2 text-warning">
+                  ★★★★☆
+                </div>
+                <a href="#" class="btn btn-primary detail-btn" data-bs-toggle="modal"
+                  data-bs-target="#productDetailModal" data-title="Herbal A" data-img="images/product1.jpg"
+                  data-desc="Ramuan herbal alami yang kaya manfaat untuk menjaga daya tahan tubuh.">
+                  Learn More
+                </a>
+                <a href="#" class="btn btn-outline-success mt-2">
+                  <i class="bi bi-cart-plus"></i> + Keranjang
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-md-3 mb-4 product-card" data-category="ekstrak">
+            <div class="card h-100 position-relative small-card">
+              <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98x-lzrne0arh0js18.webp" class="card-img-top" alt="Ekstrak Gambir">
+              <div class="card-body">
+                <h5 class="card-title">Ekstrak Gambir</h5>
+                <p class="card-text">Produk unggulan dari ekstrak gambir murni.</p>
+                <div class="mb-2 text-warning">
+                  ★★★★★
+                </div>
+                <a href="#" class="btn btn-primary detail-btn" data-bs-toggle="modal"
+                  data-bs-target="#productDetailModal" data-title="Ekstrak Gambir" data-img="images/product2.jpg"
+                  data-desc="Produk berkualitas tinggi dari ekstrak gambir asli, cocok untuk berbagai kebutuhan.">
+                  Learn More
+                </a>
+                <a href="#" class="btn btn-outline-success mt-2">
+                  <i class="bi bi-cart-plus"></i> + Keranjang
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-md-3 mb-4 product-card" data-category="herbal">
+            <div class="card h-100 position-relative small-card">
+              <span class="badge bg-danger position-absolute top-0 start-0 m-2">-20%</span>
+              <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98z-lzrne0arif48ff.webp" class="card-img-top" alt="Herbal B">
+              <div class="card-body">
+                <h5 class="card-title">Herbal B</h5>
+                <p class="card-text">Solusi alami untuk vitalitas harian Anda.</p>
+                <div class="mb-2 text-warning">
+                  ★★★☆☆
+                </div>
+                <a href="#" class="btn btn-primary detail-btn" data-bs-toggle="modal"
+                  data-bs-target="#productDetailModal" data-title="Herbal B" data-img="images/product3.jpg"
+                  data-desc="Diformulasikan untuk menunjang stamina dan energi Anda setiap hari.">
+                  Learn More
+                </a>
+                <a href="#" class="btn btn-outline-success mt-2">
+                  <i class="bi bi-cart-plus"></i> + Keranjang
+                </a>
+              </div>
+            </div>
+          </div>
+
+           <!-- Card 4 -->
+           <div class="col-md-3 mb-4 product-card" data-category="ekstrak">
+            <div class="card h-100 position-relative small-card">
+              <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98p-lzrne0ar9zpk5d@resize_w450_nl.webp" class="card-img-top" alt="Ekstrak Gambir">
+              <div class="card-body">
+                <h5 class="card-title">Opak Gambir</h5>
+                <p class="card-text">Produk unggulan dari ekstrak gambir murni.</p>
+                <div class="mb-2 text-warning">
+                  ★★★★★
+                </div>
+                <a href="#" class="btn btn-primary detail-btn" data-bs-toggle="modal"
+                  data-bs-target="#productDetailModal" data-title="Ekstrak Gambir" data-img="images/product2.jpg"
+                  data-desc="Produk berkualitas tinggi dari ekstrak gambir asli, cocok untuk berbagai kebutuhan.">
+                  Learn More
+                </a>
+                <a href="#" class="btn btn-outline-success mt-2">
+                  <i class="bi bi-cart-plus"></i> + Keranjang
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <p id="noResults" class="text-center text-muted mt-4" style="display: none;">Tidak ada produk yang cocok.</p>
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- Modal -->
+  <div class="modal fade" id="productDetailModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Detail Produk</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <img src="" class="img-fluid mb-3" alt="Gambar Produk">
+          <p>Deskripsi lengkap produk akan ditampilkan di sini...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tambahkan setelah bagian modal detail produk -->
+  <!-- Cart Modal -->
+  <div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-end">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Keranjang Belanja</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <ul class="list-group mb-3" id="cartItems"></ul>
+          <h6>Total: <span id="cartTotal">Rp0</span></h6>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+          <button class="btn btn-success" onclick="checkout()">Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tombol keranjang -->
+  <button class="btn btn-warning position-fixed top-0 end-0 m-3" data-bs-toggle="modal" data-bs-target="#cartModal">
+    <i class="fas fa-shopping-cart"></i> <span id="cartCount" class="badge bg-danger">0</span>
+  </button>
+
+  <!-- Toast -->
+  <div class="position-fixed bottom-0 start-50 translate-middle-x mb-4" style="z-index: 9999;">
+    <div id="toastAdd" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive"
+      aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body">
+          Produk ditambahkan ke keranjang!
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2023 Kresno Gambir. All rights reserved.</p>
+  </footer>
+  <!-- footer end -->
+
+  <!-- Scroll to top button -->
+  <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+    class="btn btn-primary position-fixed bottom-0 end-0 m-4">↑</button>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- js -->
+  <script>
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const searchInput = document.getElementById('searchInput');
+    const productCards = document.querySelectorAll('.product-card');
+    const noResults = document.getElementById('noResults');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const category = btn.getAttribute('data-category');
+        filterProducts(category, searchInput.value.trim().toLowerCase());
+      });
+    });
+
+    searchInput.addEventListener('input', () => {
+      const activeCategory = document.querySelector('.filter-btn.active').getAttribute('data-category');
+      filterProducts(activeCategory, searchInput.value.trim().toLowerCase());
+    });
+
+    function filterProducts(category, searchTerm) {
+      let visibleCount = 0;
+      productCards.forEach(card => {
+        const title = card.querySelector('.card-title').textContent.toLowerCase();
+        const matchesCategory = category === 'all' || card.getAttribute('data-category') === category;
+        const matchesSearch = title.includes(searchTerm);
+        const isVisible = matchesCategory && matchesSearch;
+        card.style.display = isVisible ? 'block' : 'none';
+        if (isVisible) visibleCount++;
+      });
+      noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+
+    // Modal dynamic content
+    const detailButtons = document.querySelectorAll('.detail-btn');
+    const modalTitle = document.querySelector('#productDetailModal .modal-title');
+    const modalImg = document.querySelector('#productDetailModal img');
+    const modalDesc = document.querySelector('#productDetailModal .modal-body p');
+
+    detailButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        modalTitle.textContent = btn.getAttribute('data-title');
+        modalImg.src = btn.getAttribute('data-img');
+        modalDesc.textContent = btn.getAttribute('data-desc');
+      });
+    });
+
+    // Tooltip init
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    tooltipTriggerList.forEach(el => new bootstrap.Tooltip(el));
+
+    // 2. Cart  modal
+    const cart = [];
+    const cartItemsEl = document.getElementById('cartItems');
+    const cartTotalEl = document.getElementById('cartTotal');
+    const cartCountEl = document.getElementById('cartCount');
+    const toastAdd = new bootstrap.Toast(document.getElementById('toastAdd'));
+
+    document.querySelectorAll('.btn-outline-success').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const card = btn.closest('.card');
+        const title = card.querySelector('.card-title').textContent;
+        const price = 25000; // Harga dummy
+        const existing = cart.find(item => item.title === title);
+
+        if (existing) {
+          existing.qty += 1;
+        } else {
+          cart.push({ title, price, qty: 1 });
+        }
+
+        updateCartUI();
+        toastAdd.show();
+      });
+    });
+
+    function updateCartUI() {
+      cartItemsEl.innerHTML = '';
+      let total = 0;
+      cart.forEach(item => {
+        total += item.price * item.qty;
+        const li = document.createElement('li');
+        li.className = 'list-group-item d-flex justify-content-between align-items-center';
+        li.innerHTML = `
+        <span>${item.title} x${item.qty}</span>
+        <span>Rp${item.price * item.qty}</span>
+      `;
+        cartItemsEl.appendChild(li);
+      });
+
+      cartCountEl.textContent = cart.reduce((sum, item) => sum + item.qty, 0);
+      cartTotalEl.textContent = 'Rp' + total.toLocaleString('id-ID');
+    }
+
+    function checkout() {
+      alert('Terima kasih sudah berbelanja di Kresno Gambir!');
+      cart.length = 0;
+      updateCartUI();
+      bootstrap.Modal.getInstance(document.getElementById('cartModal')).hide();
+    }
+
+
+
+  </script>
+
+</body>
+
+</html>
